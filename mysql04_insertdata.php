@@ -12,7 +12,7 @@ mysqli_report(MYSQLI_REPORT_OFF);
 $servername = "127.0.0.1";
 $username = "admin";
 $password = "admin123"; // Use the correct password
-$database = "dbAdi";
+$database = "dbadi";
 
 // Attempt to connect to the database
 $conn = mysqli_connect($servername, $username, $password, $database);
@@ -27,7 +27,7 @@ if (!$conn) {
 $name = "Vikarant";
 $destination = "canada";
 // sql query to be executed
-$sql = "INSERT INTO `trip` (`name`, `dest`) VALUES ('$name', '$destination')";
+$sql = "INSERT INTO `phptrip` (`name`, `address`) VALUES ('$name', '$destination')";
 
 $result = mysqli_query($conn, $sql); 
 
