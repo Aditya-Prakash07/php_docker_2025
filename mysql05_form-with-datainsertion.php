@@ -19,7 +19,7 @@ mysqli_report(MYSQLI_REPORT_OFF);
   <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="mysql_form-with-datainsertion.php">Dynamic Contact Form</a>
+    <a class="navbar-brand" href="mysql05_form-with-datainsertion.php">Dynamic Contact Form</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -107,7 +107,7 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
 
 <div class="container mt-3">
     <h3>Contact us for your concerns.</h3>
-<form action="mysql_form-with-datainsertion.php" method = "post">
+<form action="mysql05_form-with-datainsertion.php" method = "post">
   <div class="mb-3">
     <label for="name" class="form-label">Name</label>
     <input type="text" name = "name" class="form-control" id="name" aria-describedby="emailHelp">
