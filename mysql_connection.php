@@ -20,7 +20,7 @@ try {
     // Define database connection parameters
     $servername = "127.0.0.1";
     $username = "admin";
-    $password = "wrong_password"; // Intentionally wrong password
+    $password = "admin123"; // Intentionally wrong password
 
     // Attempt to connect to the database
     $conn = mysqli_connect($servername, $username, $password);
