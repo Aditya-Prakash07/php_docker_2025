@@ -25,7 +25,7 @@ if (!$conn) {
     echo "Connection successful!<br>";
 
     // Create DB SQL query
-    $sql = "CREATE DATABASE dbAdi3";
+    $sql = "CREATE DATABASE dbAdi";
 
     // Run the SQL query to create the database
     $result = mysqli_query($conn, $sql);
