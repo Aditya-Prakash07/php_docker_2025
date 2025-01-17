@@ -1,20 +1,36 @@
-<?php echo "Welcome to the stage were we are ready to get connected to the data base !";
-echo "<br> Ways to connect to a mysql database";
-echo "<br> 1.) MySQLi extension , it works with my sql database only";
-echo "<br> 2.) PDO (PHP data objects), it works with all kind of databases";
-echo "<br>";
-echo "<br>";
-echo "Connecting to MySQLi Database.......";
-$servername = "127.0.0.";
-$username = "admin";
-$password = "admin123";
-echo "<br>";
-echo "<br>";
-echo "Create a connection..";
-$conn = mysqli_connect($servername, $username, $password);
-echo "<br>";
-if (!$conn) {
-    die("Sorry we failed to connect: " . mysqli_connect_error());
-}
+<?php
+// Enable error reporting for debugging
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ini_set('log_errors', 1);
+ini_set('error_log', '/tmp/php_errors.log'); // Change this to a writable location
 
-echo "Connection successful!";
+echo "Welcome to the stage where we are ready to get connected to the database!";
+echo "<br>Ways to connect to a MySQL database:";
+echo "<br>1.) MySQLi extension - it works with MySQL database only.";
+echo "<br>2.) PDO (PHP Data Objects) - it works with all kinds of databases.";
+echo "<br><br>";
+
+echo "Connecting to MySQLi Database.......<br><br>";
+
+// Enable MySQLi exceptions
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+
+try {
+    // Define database connection parameters
+    $servername = "127.0.0.1";
+    $username = "admin";
+    $password = "wrong_password"; // Intentionally wrong password
+
+    // Attempt to connect to the database
+    $conn = mysqli_connect($servername, $username, $password);
+
+    // If connection is successful
+    echo "Connection successful!";
+} catch (mysqli_sql_exception $e) {
+    // Handle connection error
+    echo "<br>Sorry, we failed to connect to the database.";
+    echo "<br>Error: " . $e->getMessage();
+    error_log("Database connection error: " . $e->getMessage());
+}
+?>
