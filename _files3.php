@@ -21,6 +21,12 @@ $filepointer = fopen("file.txt", "r");
 
 
 // write a program which reads the content of a file until full stop is encountered
+ while($a=fgetc($filepointer)){
+    echo $a;
+    if($a == '.')break;
+ }
+ fclose($filepointer);
 
 
+ // study why for numbers it is automatically breaking after number 9 and not reading charecters
 ?>
